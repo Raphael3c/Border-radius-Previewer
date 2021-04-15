@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #252422;
+}
+
+.App{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.pannel{
+
+    width: 40vw;
+    height: 70vh;
+    background-color: #CCC5B9;
+    margin-right: 15%;
+
+}
+
+.shape{
+    position: relative;
+
+    width: 20vw;
+    height: 20vw;
+    background-color: #EB5E28;
+}
