@@ -10,49 +10,85 @@ function App() {
   const [value2, setValue2] = useState('');
   const [value3, setValue3] = useState('');
   const [value4, setValue4] = useState('');
-
-  function teste(){
-    const css = window.getComputedStyle(document.getElementById('shape'), "")
-    console.log(css.borderTopLeftRadius);
-    console.log(css.borderTopRightRadius);
-    console.log(css.borderBottomLeftRadius);
-    console.log(css.borderBottomRightRadius);
-  }
-
-
+  
   return (
     <div className="App">
-
       <div className="pannel">
-        <input type="text" onChange={e => setValue1(e.target.value)} value={value1}/>
-        <input type="text" onChange={e => setValue2(e.target.value)} value={value2}/>
-        <input type="text" onChange={e => setValue3(e.target.value)} value={value3}/>
-        <input type="text" onChange={e => setValue4(e.target.value)} value={value4}/>
+
+        <div class="mb-3">
+          <label htmlFor="value1" class="form-label">Valor 1</label>
+            <input type="tel" 
+                maxlength = "8"
+                limit={6} onChange={e => setValue1(e.target.value)} 
+                value={value1}
+                class="form-control form-control-lg"
+                id="value1"
+            />
+          </div>
+        
+        <div class="mb-3">
+          <label htmlFor="value2" class="form-label">Valor 2</label>
+          <input type="tel" 
+              maxlength = "8"
+              onChange={e => setValue2(e.target.value)} 
+              value={value2}
+              class="form-control form-control-lg"
+              id="value2"
+          />
+        </div>
+        
+        <div class="mb-3">
+          <label htmlFor="value3" class="form-label">Valor 3</label>
+          <input type="tel" 
+              maxlength = "8"
+              imit={6} onChange={e => setValue3(e.target.value)} 
+              value={value3}
+              class="form-control form-control-lg"
+              id="value3"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label htmlFor="value4" class="form-label">Valor 4</label>
+          <input type="tel" 
+              maxlength = "8" 
+              onChange={e => setValue4(e.target.value)} 
+              value={value4}
+              class="form-control form-control-lg"
+              id="value4"
+          />
+        </div>
       </div>
 
     <div>
       <div id="shape" style={{
-          borderTopLeftRadius: value1 + 'em', 
-          borderTopRightRadius: value2 + 'em',
-          borderBottomLeftRadius: value3 + 'em',
-          borderBottomRightRadius: value4 + 'em',
+          borderTopLeftRadius: Number(value1) + 'em', 
+          borderTopRightRadius: Number(value2) + 'em',
+          borderBottomLeftRadius: Number(value3) + 'em',
+          borderBottomRightRadius: Number(value4) + 'em',
         }}
         
         >
+
         </div>
 
         <div className="clipboard">
-          <p>
-            borderTopLeftRadius: {value1};
-            <br/>
-            borderTopRightRadius: {value2};
-            <br/>
-            borderBottomLeftRadius: {value3};
-            <br/>
-            borderBottomRightRadius: {value4}; 
-          </p>
+          <div>
+            <p>
+              borderTopLeftRadius: {value1 ? value1 : 0}
+            </p>
+            <p>
+              borderTopRightRadius: {value2 ? value2 : 0}
+            </p>
+            <p>
+              borderBottomLeftRadius: {value3 ? value3 : 0}
+            </p>
+            <p>
+              borderBottomRightRadius: {value4 ? value4 : 0} 
+            </p>
+          </div>
 
-          <button onClick={teste}><IoCopyOutline size={30}></IoCopyOutline></button>
+          <button><IoCopyOutline size={30}></IoCopyOutline></button>
         </div>
 
     </div>
