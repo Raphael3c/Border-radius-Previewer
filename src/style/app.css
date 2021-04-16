@@ -22,10 +22,25 @@ body{
 
 }
 
-.shape{
+#shape{
     position: relative;
 
     width: 20vw;
     height: 20vw;
     background-color: #EB5E28;
+}
+
+.pannel input{
+    display: block;
+}
+
+.clipboard{
+    display: flex;
+}
+
+.clipboard button{
+    margin-left: 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
