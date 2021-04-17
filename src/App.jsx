@@ -10,16 +10,29 @@ function App() {
   const [value2, setValue2] = useState('');
   const [value3, setValue3] = useState('');
   const [value4, setValue4] = useState('');
+
+
+  async function clipboardCopy() {
+
+    let text = 
+    `border-Top-Left-Radius: ${value1 ? value1 : 0};
+    border-Top-Right-Radius: ${value2 ? value2 : 0};
+    border-Bottom-Left-Radius: ${value3 ? value3 : 0};
+    border-Bottom-Right-Radius: ${value4 ? value4 : 0};`
+
+    await navigator.clipboard.writeText(text);
+  }
+
   
   return (
     <div className="App">
       <div className="pannel">
 
         <div class="mb-3">
-          <label htmlFor="value1" class="form-label">Valor 1</label>
+          <label htmlFor="value1" class="form-label">Top Left</label>
             <input type="tel" 
                 maxlength = "8"
-                limit={6} onChange={e => setValue1(e.target.value)} 
+                onChange={e => setValue1(e.target.value)} 
                 value={value1}
                 class="form-control form-control-lg"
                 id="value1"
@@ -27,7 +40,7 @@ function App() {
           </div>
         
         <div class="mb-3">
-          <label htmlFor="value2" class="form-label">Valor 2</label>
+          <label htmlFor="value2" class="form-label">Top Right</label>
           <input type="tel" 
               maxlength = "8"
               onChange={e => setValue2(e.target.value)} 
@@ -38,10 +51,10 @@ function App() {
         </div>
         
         <div class="mb-3">
-          <label htmlFor="value3" class="form-label">Valor 3</label>
+          <label htmlFor="value3" class="form-label">Bottom Left</label>
           <input type="tel" 
               maxlength = "8"
-              imit={6} onChange={e => setValue3(e.target.value)} 
+              onChange={e => setValue3(e.target.value)} 
               value={value3}
               class="form-control form-control-lg"
               id="value3"
@@ -49,7 +62,7 @@ function App() {
         </div>
 
         <div class="mb-3">
-          <label htmlFor="value4" class="form-label">Valor 4</label>
+          <label htmlFor="value4" class="form-label">Bottom Right</label>
           <input type="tel" 
               maxlength = "8" 
               onChange={e => setValue4(e.target.value)} 
@@ -88,11 +101,10 @@ function App() {
             </p>
           </div>
 
-          <button><IoCopyOutline size={30}></IoCopyOutline></button>
+          <button onClick={clipboardCopy}><IoCopyOutline size={30}></IoCopyOutline></button>
         </div>
 
     </div>
-
     </div>
   );
 }
