@@ -79,6 +79,7 @@ function App() {
           borderTopRightRadius: Number(value2) + 'em',
           borderBottomLeftRadius: Number(value3) + 'em',
           borderBottomRightRadius: Number(value4) + 'em',
+          borderTop: 4 + 'em',
         }}
         
         >
